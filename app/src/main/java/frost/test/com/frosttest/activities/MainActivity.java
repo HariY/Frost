@@ -168,11 +168,6 @@ public class MainActivity extends SuperActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-       /* if (id == R.id.action_settings) {
-            return true;
-        }*/
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -200,7 +195,6 @@ public class MainActivity extends SuperActivity
     {
 
         videoUrl=children.getVideoList().get(0);
-        Log.d("PRINT",videoUrl);
 
         setUpSimpleExoPlayer();
 
@@ -212,9 +206,7 @@ public class MainActivity extends SuperActivity
         if (serverReqestType == ServerReqestTypes.VIDEO_SEARCH) {
             hideLoader();
             List<Children> dataList = (List<Children>) result;
-            //showDataInRecyclerView(dataList);
             setPlayerToPlayVideo(dataList.get(0));
-
 
         }
     }
@@ -261,61 +253,59 @@ public class MainActivity extends SuperActivity
 
 
 
-
-
     private ArrayList<CategoryListItemElement> dummyData()
     {
         ArrayList<CategoryListItemElement> dataArrayList=new ArrayList<>();
         CategoryListItemElement categoryListItemElement1=new CategoryListItemElement("Linear Data Structure",
-                0,1,-1,true,false,"",false,0,null);
+                0,1,-1,true,false,false);
         dataArrayList.add(categoryListItemElement1);
 
         CategoryListItemElement categoryListItemElement11=new CategoryListItemElement("Arrays",
-                1,11,1,true,false,"",false,0,null);
+                1,11,1,true,false,false);
         dataArrayList.add(categoryListItemElement11);
 
         CategoryListItemElement categoryListItemElement111=new CategoryListItemElement("Introduction",
-                2,111,11,false,false,"",false,0,null);
+                2,111,11,false,false,false);
         dataArrayList.add(categoryListItemElement111);
 
         CategoryListItemElement categoryListItemElement112=new CategoryListItemElement("One Dimensional Array",
-                2,112,11,false,false,"",false,0,null);
+                2,112,11,false,false,false);
         dataArrayList.add(categoryListItemElement112);
 
         CategoryListItemElement categoryListItemElement113=new CategoryListItemElement("Two Dimensional Array",
-                2,113,11,false,false,"",false,0,null);
+                2,113,11,false,false,false);
         dataArrayList.add(categoryListItemElement113);
 
         CategoryListItemElement categoryListItemElement114=new CategoryListItemElement("Three Dimensional Array",
-                2,114,11,false,false,"",false,0,null);
+                2,114,11,false,false,false);
         dataArrayList.add(categoryListItemElement114);
 
 
 
         CategoryListItemElement categoryListItemElement12=new CategoryListItemElement("Linked List",
-                1,12,1,true,false,"",false,0,null);
+                1,12,1,true,false,false);
         dataArrayList.add(categoryListItemElement12);
 
         CategoryListItemElement categoryListItemElement121=new CategoryListItemElement("Introduction",
-                2,121,12,false,false,"",false,0,null);
+                2,121,12,false,false,false);
         dataArrayList.add(categoryListItemElement121);
 
         CategoryListItemElement categoryListItemElement122=new CategoryListItemElement("Single Linked List",
-                2,122,12,false,false,"",false,0,null);
+                2,122,12,false,false,false);
         dataArrayList.add(categoryListItemElement122);
 
         CategoryListItemElement categoryListItemElement123=new CategoryListItemElement("Double Linked List",
-                2,123,12,false,false,"",false,0,null);
+                2,123,12,false,false,false);
         dataArrayList.add(categoryListItemElement123);
 
         //------- section two starts---
 
         CategoryListItemElement categoryListItemElement2=new CategoryListItemElement("Non Linear Data Structure",
-                0,2,-1,true,false,"",false,0,null);
+                0,2,-1,true,false,false);
         dataArrayList.add(categoryListItemElement2);
 
         CategoryListItemElement categoryListItemElement21=new CategoryListItemElement("Graph",
-                1,21,2,false,false,"",false,0,null);
+                1,21,2,false,false,false);
         dataArrayList.add(categoryListItemElement21);
 
 
@@ -324,11 +314,7 @@ public class MainActivity extends SuperActivity
         parentDataListArray.add(categoryListItemElement2);
 
 
-
-
         return dataArrayList;
-
-
     }
 
     private void releasePlayer()
@@ -359,8 +345,8 @@ public class MainActivity extends SuperActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        RequestManager.getInstance().stop();
         releasePlayer();
+        RequestManager.getInstance().stop();
     }
 
 

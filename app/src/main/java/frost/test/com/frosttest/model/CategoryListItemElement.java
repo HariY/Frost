@@ -20,29 +20,21 @@ public class CategoryListItemElement implements Comparable<CategoryListItemEleme
 
     private String fullName;
 
-    private String visibleCategoryName;
-
-    private int countValue;
 
     public static final int NO_PARENT = -1;
 
     public static final int TOP_LEVEL = 0;
 
     public CategoryListItemElement(String contentText, int level, int id, int parendId,
-                                   boolean hasChildren, boolean isExpanded,String fullName,boolean isSelected,int count,String visibleCategoryName) {
+                                   boolean hasChildren, boolean isExpanded,boolean isSelected) {
         super();
         this.level = level;
         this.id = id;
         this.parendId = parendId;
         this.hasChildren = hasChildren;
         this.isExpanded = isExpanded;
-        this.fullName = fullName;
         this.isSelected=isSelected;
-        this.countValue=count;
-        if(visibleCategoryName!=null && visibleCategoryName.length()>0)
-            this.contentText=visibleCategoryName;
-        else
-            this.contentText = contentText;
+        this.contentText = contentText;
     }
 
     public String getFullName() {
@@ -108,15 +100,6 @@ public class CategoryListItemElement implements Comparable<CategoryListItemEleme
     public void setSelected(boolean isSelected) {
         this.isSelected = isSelected;
     }
-
-    public int getCountValue() {
-        return countValue;
-    }
-
-    public void setCountValue(int countValue) {
-        this.countValue = countValue;
-    }
-
 
 
     @Override

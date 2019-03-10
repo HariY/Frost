@@ -26,10 +26,7 @@ public class CustomListAdapter  extends BaseAdapter {
     private Context context;
     Drawable upArrowDrawable,downArrowDrawable,levelOneIc,levelTwoIc,levelThreeIc;
     private ArrayList<String> selectedCategories;
-    int indentionBase = 20;
-    LinearLayout layout;
-    boolean isCountRequired;
-
+    int indentionBase = 30;
 
 
     public CustomListAdapter(Context context, ArrayList<CategoryListItemElement> elements, ArrayList<CategoryListItemElement> elementsData,
@@ -47,10 +44,6 @@ public class CustomListAdapter  extends BaseAdapter {
         levelTwoIc=ResourcesCompat.getDrawable(context.getResources(),R.drawable.sub_folder_ic,null);
         levelThreeIc=ResourcesCompat.getDrawable(context.getResources(),R.drawable.sub_sub_folder_ic,null);
 
-        if(isCountRequired)
-            indentionBase = 10;
-        else
-            indentionBase = 30;
     }
 
     public ArrayList<CategoryListItemElement> getElements() {
@@ -99,12 +92,7 @@ public class CustomListAdapter  extends BaseAdapter {
                 60,
                 50,
                 60);
-        if(element.getCountValue()>-1) {
-            holder.contentText.setText(element.getContentText());
-        }
-        else {
-            holder.contentText.setText(element.getContentText());
-        }
+        holder.contentText.setText(element.getContentText());
         if (element.isHasChildren() && !element.isExpanded()) {
             holder.disclosureImg.setVisibility(View.VISIBLE);
             holder.disclosureImg.setImageDrawable(downArrowDrawable);
@@ -115,20 +103,7 @@ public class CustomListAdapter  extends BaseAdapter {
             holder.disclosureImg.setVisibility(View.GONE);
         }
 
-        switch (element.getLevel())
-        {
-            case 0:
-                holder.logoImg.setImageDrawable(levelOneIc);
-                break;
-
-            case 1:
-                holder.logoImg.setImageDrawable(levelTwoIc);
-                break;
-
-            case 2:
-                holder.logoImg.setImageDrawable(levelThreeIc);
-                break;
-        }
+        holder.logoImg.setImageDrawable(getRespectiveIcon(element.getLevel()));
 
         return convertView;
     }
@@ -147,11 +122,11 @@ public class CustomListAdapter  extends BaseAdapter {
         RelativeLayout layout;
     }
 
-    public Drawable getRespectiveIcon(int position)
+    public Drawable getRespectiveIcon(int level)
     {
-        if(position==0)
+        if(level==0)
             return levelOneIc;
-        else if(position==1)
+        else if(level==1)
             return levelTwoIc;
         else
             return levelThreeIc;

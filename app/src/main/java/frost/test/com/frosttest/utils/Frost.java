@@ -18,21 +18,8 @@ public class Frost extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        calculateEfortableCacheSize();
         registerNetworkListener();
-
     }
-    private void calculateEfortableCacheSize(){
-        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-        int memoryClassInMb = am.getMemoryClass();
-        cacheSizeInKb = (1024 * memoryClassInMb)/8;
-    }
-
-
-    public int getCacheSize(){
-        return cacheSizeInKb;
-    }
-
 
     private class NetworkChangeReceiver extends BroadcastReceiver {
 
