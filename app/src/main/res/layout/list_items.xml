@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    >
+
+    <!--<frost.test.com.frosttest.levelListView.LevelBeamView
+        android:id="@+id/dataItemLevelBeam"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/data_item_row_height" />-->
+
+    <ImageView
+        android:id="@+id/dataItemArrow"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/arrow_down"/>
+    
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_menu_camera"
+        android:layout_centerVertical="true"
+        />
+
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/dataItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_default"
+            android:textColor="@android:color/black"
+            android:text="hai"
+            android:layout_centerVertical="true"
+            android:gravity="left|center_vertical"
+            android:layout_toLeftOf="@+id/dataItemArrow"
+            android:layout_toRightOf="@+id/logo"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"/>
+
+
+
+
+</RelativeLayout>
