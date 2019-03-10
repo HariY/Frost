@@ -25,7 +25,7 @@ The Frost app fetches the video content from the given api and parse the respons
 
 ![Screenshot](https://github.com/HariY/Frost/blob/master/Screen2.png)
 
-![Screenshot](https://github.com/HariY/Frost/blob/master/Screen3.png)
+![Screenshot](https://github.com/HariY/Frost/blob/master/screen3.png)
 
 ![Screenshot](https://github.com/HariY/Frost/blob/master/Screen4.png)
 
