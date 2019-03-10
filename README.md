@@ -17,7 +17,7 @@ The Frost app fetches the video content from the given api and parse the respons
 
 1. Preservation of data can be handled by placing the Android serialization(Through parcel able).
 2. Callback mechanism can be improved for API calls for error handling.
-3. Need to handle video player states for better user experience.
+3. Need to handle video player states and landscape mode for better user experience.
 
 
 **Output**
